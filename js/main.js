@@ -24,7 +24,7 @@ function signUpHandler() {
       loadUsers();
       saveUsers();
 
-      console.log("Sign Up Successful");
+      alert("Sign Up Successful");
     }
   } else {
     alert("Passwords don't match.");
@@ -47,10 +47,7 @@ function signInHandler() {
       passCheck.includes(passwordLogIn)
     ) {
       return alert("Log In Successful!");
-    } else if (
-      !userCheck.includes(usernameLogIn) &&
-      !passCheck.includes(passwordLogIn)
-    ) {
+    } else {
       alert("Invalid Login Details!!!");
     }
   }
@@ -60,7 +57,6 @@ function signInHandler() {
 // HELPER FUNCTIONS
 
 // Check Username for Sign Up
-
 function checkUsername(newUsername) {
   for (let i = 0; i < users.length; i++) {
     let usersCheck = users[i].username;
