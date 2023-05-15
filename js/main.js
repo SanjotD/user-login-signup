@@ -40,10 +40,10 @@ function signInHandler() {
   let passwordLogIn = document.getElementById("passwordSignIn").value;
 
   for (let i = 0; i < users.length; i++) {
-    let userCheck = users[i].username;
-    let passCheck = users[i].password;
+    // let userCheck = users[i].username;
+    // let passCheck = users[i].password;
     if (
-      userCheck.includes(usernameLogIn) &&
+      checkUsername(usernameLogIn) === true &&
       passCheck.includes(passwordLogIn)
     ) {
       return alert("Log In Successful!");
@@ -56,17 +56,18 @@ function signInHandler() {
 
 // HELPER FUNCTIONS
 
+//
+
 // Check Username for Sign Up
 function checkUsername(newUsername) {
   for (let i = 0; i < users.length; i++) {
     let usersCheck = users[i].username;
 
-    if (usersCheck.includes(newUsername)) {
+    if (usersCheck === newUsername) {
       return true;
-    } else {
-      false;
     }
   }
+  return false;
 }
 
 // New User Info
