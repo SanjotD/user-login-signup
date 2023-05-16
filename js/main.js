@@ -44,11 +44,11 @@ function signInHandler() {
     // let passCheck = users[i].password;
     if (
       checkUsername(usernameLogIn) === true &&
-      passCheck.includes(passwordLogIn)
+      checkPassword(passwordLogIn) === true
     ) {
       return alert("Log In Successful!");
     } else {
-      alert("Invalid Login Details!!!");
+      return alert("Invalid Login Details!!!");
     }
   }
   loadUsers();
@@ -56,14 +56,24 @@ function signInHandler() {
 
 // HELPER FUNCTIONS
 
-//
-
-// Check Username for Sign Up
-function checkUsername(newUsername) {
+// Check Username
+function checkUsername(usernameInput) {
   for (let i = 0; i < users.length; i++) {
     let usersCheck = users[i].username;
 
-    if (usersCheck === newUsername) {
+    if (usersCheck === usernameInput) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Check Password
+function checkPassword(passwordInput) {
+  for (let i = 0; i < users.length; i++) {
+    let passCheck = users[i].password;
+
+    if (passCheck === passwordInput) {
       return true;
     }
   }
