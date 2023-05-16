@@ -40,8 +40,6 @@ function signInHandler() {
   let passwordLogIn = document.getElementById("passwordSignIn").value;
 
   for (let i = 0; i < users.length; i++) {
-    // let userCheck = users[i].username;
-    // let passCheck = users[i].password;
     if (
       checkUsername(usernameLogIn) === true &&
       checkPassword(passwordLogIn) === true
